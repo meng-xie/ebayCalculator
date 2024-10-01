@@ -1,5 +1,6 @@
 # Flexible Calculator
 
+<img width="912" alt="image" src="https://github.com/user-attachments/assets/ce09216d-e35a-4628-8c97-0b565389b90b">
 
  
 ## Assumptions:
@@ -7,6 +8,13 @@
 2. Operations can be chained sequentially.
 3. The solution adheres to the Open-Closed Principle, allowing for new operations to be added without modifying the `Calculator` class.
 4. Division by zero is handled gracefully by throwing an `ArithmeticException`.
+
+## Requisites
+- Java 17
+- Spring boot test 3
+- JUnit
+- Mockito
+
 
 ## How to Run
 1. Clone the repository.
