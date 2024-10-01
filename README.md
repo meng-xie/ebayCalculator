@@ -28,3 +28,11 @@
 * **Inversion of Control**: The `Calculator` class no longer directly controls which operation to use. Instead, it relies on the IoC container (Spring) to inject the correct `OperationStrategy` implementations at runtime.
 * **Loose Coupling**: The calculator can work with any new operations simply by injecting them through the `Map<Operation, OperationStrategy>` without changing the core logic of the `Calculator` class.
 * **Testability**: It’s easier to test because you can mock or inject different strategies during unit testing, enabling more flexible testing setups.
+
+
+
+## Future Improvements
+- Support for more Operators and Numeric Types.
+- Add Monitor log print
+- Edge case bug fixes
+- Resiliency (Rate Limiting, Retries, Multithreading)
