@@ -19,7 +19,7 @@
 
 ## How to Run
 1. Clone the repository.
-2. install java and apache maven or use IDE to run
+2. install Java and Apache Maven or use IDE to run.
 3. Run the tests using `mvn test` or your preferred testing framework.
 4. Use the `Calculator` class to perform basic or chained operations.
 
