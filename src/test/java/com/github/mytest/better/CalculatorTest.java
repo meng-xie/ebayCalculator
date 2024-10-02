@@ -31,7 +31,7 @@ public class CalculatorTest {
     @Mock
     private PowOperation powOperation;
 
-    private Map<Operation, OperationStrategy> operationStrategies;
+    private Map<Operation, OperationInterface> operationStrategies;
 
     @InjectMocks
     private Calculator calculator;
@@ -57,7 +57,7 @@ public class CalculatorTest {
     @Test
     public void testAddition() {
         // Arrange
-        when(addOperation.apply(24, 3)).thenReturn(27);
+        when(addOperation.operation(24, 3)).thenReturn(27);
 
         // Act
         calculator.chain(Operation.ADD, 3);
@@ -70,7 +70,7 @@ public class CalculatorTest {
     @Test
     public void testSubtraction() {
         // Arrange
-        when(subtractOperation.apply(24, 2)).thenReturn(22);
+        when(subtractOperation.operation(24, 2)).thenReturn(22);
 
         // Act
         calculator.chain(Operation.SUBTRACT, 2);
@@ -83,7 +83,7 @@ public class CalculatorTest {
     @Test
     public void testMultiplication() {
         // Arrange
-        when(multiplyOperation.apply(24, 3)).thenReturn(72);
+        when(multiplyOperation.operation(24, 3)).thenReturn(72);
 
         // Act
         calculator.chain(Operation.MULTIPLY, 3);
@@ -96,7 +96,7 @@ public class CalculatorTest {
     @Test
     public void testDivision() {
         // Arrange
-        when(divideOperation.apply(24, 3)).thenReturn(8);
+        when(divideOperation.operation(24, 3)).thenReturn(8);
 
         // Act
         calculator.chain(Operation.DIVIDE, 3);
@@ -109,7 +109,7 @@ public class CalculatorTest {
     @Test
     public void testPow() {
         // Arrange
-        when(powOperation.apply(24, 1)).thenReturn(24);
+        when(powOperation.operation(24, 1)).thenReturn(24);
 
         // Act
         calculator.chain(Operation.POW, 1);
@@ -122,8 +122,8 @@ public class CalculatorTest {
     @Test
     public void testChainedOperations() {
         // Arrange
-        when(addOperation.apply(24, 3)).thenReturn(27);
-        when(subtractOperation.apply(27, 4)).thenReturn(23);
+        when(addOperation.operation(24, 3)).thenReturn(27);
+        when(subtractOperation.operation(27, 4)).thenReturn(23);
 
         // Act
         calculator.chain(Operation.ADD, 3)

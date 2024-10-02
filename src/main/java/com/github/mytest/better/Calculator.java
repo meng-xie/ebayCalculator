@@ -1,7 +1,7 @@
 package com.github.mytest.better;
 
 import com.github.mytest.original.Operation;
-import com.github.mytest.better.operations.OperationStrategy;
+import com.github.mytest.better.operations.OperationInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,21 +11,21 @@ import java.util.Map;
 public class Calculator {
     private Number currentValue;
 
-    private final Map<Operation, OperationStrategy> operationStrategies;
+    private final Map<Operation, OperationInterface> operationMaps;
 
     @Autowired
-    public Calculator(Number initialValue, Map<Operation, OperationStrategy> operationStrategies) {
+    public Calculator(Number initialValue, Map<Operation, OperationInterface> operationMaps) {
         this.currentValue = initialValue;
-        this.operationStrategies = operationStrategies;
+        this.operationMaps = operationMaps;
     }
 
     // Perform a single operation with IoC injected strategies
     public Number calculate(Operation operation, Number num1, Number num2) {
-        OperationStrategy strategy = operationStrategies.get(operation);
+        OperationInterface strategy = operationMaps.get(operation);
         if (strategy == null) {
             throw new UnsupportedOperationException("Operation not supported.");
         }
-        return strategy.apply(num1, num2);
+        return strategy.operation(num1, num2);
     }
 
     // Chaining operations

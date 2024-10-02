@@ -12,18 +12,18 @@ import java.util.Map;
 public class CalculatorConfig {
 
     @Bean
-    public Map<Operation, OperationStrategy> operationStrategies(AddOperation addOperation,
-                                                                 SubtractOperation subtractOperation,
-                                                                 MultiplyOperation multiplyOperation,
-                                                                 DivideOperation divideOperation,
-                                                                 PowOperation powOperation) {
-        Map<Operation, OperationStrategy> strategies = new HashMap<>();
-        strategies.put(Operation.ADD, addOperation);
-        strategies.put(Operation.SUBTRACT, subtractOperation);
-        strategies.put(Operation.MULTIPLY, multiplyOperation);
-        strategies.put(Operation.DIVIDE, divideOperation);
-        strategies.put(Operation.POW, powOperation);
+    public Map<Operation, OperationInterface> operationStrategies(AddOperation addOperation,
+                                                                  SubtractOperation subtractOperation,
+                                                                  MultiplyOperation multiplyOperation,
+                                                                  DivideOperation divideOperation,
+                                                                  PowOperation powOperation) {
+        Map<Operation, OperationInterface> operationMap = new HashMap<>();
+        operationMap.put(Operation.ADD, addOperation);
+        operationMap.put(Operation.SUBTRACT, subtractOperation);
+        operationMap.put(Operation.MULTIPLY, multiplyOperation);
+        operationMap.put(Operation.DIVIDE, divideOperation);
+        operationMap.put(Operation.POW, powOperation);
         // Add more operations here
-        return strategies;
+        return operationMap;
     }
 }
