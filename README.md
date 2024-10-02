@@ -5,7 +5,7 @@
  
 1. The `Calculator` supports fundamental operations (addition, subtraction, multiplication, and division).
 2. Operations can be performed in sequence.
-3. The design follows the Open-Closed Principle, enabling the addition of new operations without altering the `Calculator` class.
+3. The design follows the Open-Closed Principle, enabling the addition of new operations without modify the `Calculator` class.
 4. Division by zero is managed gracefully by raising an `ArithmeticException`.
 
  
