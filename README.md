@@ -26,7 +26,7 @@
 
 ## Version iteration
 
-folder `better` is a better version of folder `original` :
+folder `service` is  implements and expand of folder `base` :
  
 * **Inversion of Control**: The `Calculator` class no longer dictates which operation to use. Instead, it leverages an IoC container (like Spring) to inject the bean `operationMaps` implementations at runtime.
 * **Loose Coupling**: The calculator can seamlessly integrate new operations by injecting them through a `Map<Operation, OperationInterface>`, without modify the core logic of the `Calculator` class.

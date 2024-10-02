@@ -1,7 +1,7 @@
-package com.github.mytest.better;
+package com.github.mytest.service;
 
-import com.github.mytest.original.Operation;
-import com.github.mytest.better.operations.*;
+import com.github.mytest.base.Operation;
+import com.github.mytest.service.operations.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

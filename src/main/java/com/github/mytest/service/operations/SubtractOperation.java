@@ -1,4 +1,4 @@
-package com.github.mytest.better.operations;
+package com.github.mytest.service.operations;
 import org.springframework.stereotype.Component;
 
 @Component

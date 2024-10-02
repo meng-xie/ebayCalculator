@@ -1,4 +1,4 @@
-package com.github.mytest.original;
+package com.github.mytest.base;
 
 public class UnsupportedOperationException extends RuntimeException {
     public UnsupportedOperationException(String message) {

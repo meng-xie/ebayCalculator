@@ -1,7 +1,7 @@
-package com.github.mytest.better;
+package com.github.mytest.service;
 
-import com.github.mytest.original.Operation;
-import com.github.mytest.better.operations.OperationInterface;
+import com.github.mytest.base.Operation;
+import com.github.mytest.service.operations.OperationInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
