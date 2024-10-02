@@ -12,7 +12,7 @@ import java.util.Map;
 public class CalculatorConfig {
 
     @Bean
-    public Map<Operation, OperationInterface> operationStrategies(AddOperation addOperation,
+    public Map<Operation, OperationInterface> operationMaps(AddOperation addOperation,
                                                                   SubtractOperation subtractOperation,
                                                                   MultiplyOperation multiplyOperation,
                                                                   DivideOperation divideOperation,

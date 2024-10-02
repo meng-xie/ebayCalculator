@@ -11,6 +11,7 @@
  
 ## Requisites
 - Java 17
+- Apache Maven 
 - Spring boot test 3.x
 - Spring context 6.x
 - JUnit
@@ -27,8 +28,8 @@
 
 folder `better` is a better version of folder `original` :
  
-* **Inversion of Control**: The `Calculator` class no longer dictates which operation to use. Instead, it leverages an IoC container (like Spring) to inject the appropriate `OperationStrategy` implementations at runtime.
-* **Loose Coupling**: The calculator can seamlessly integrate new operations by injecting them through a `Map<Operation, OperationStrategy>`, without modify the core logic of the `Calculator` class.
+* **Inversion of Control**: The `Calculator` class no longer dictates which operation to use. Instead, it leverages an IoC container (like Spring) to inject the bean `operationMaps` implementations at runtime.
+* **Loose Coupling**: The calculator can seamlessly integrate new operations by injecting them through a `Map<Operation, OperationInterface>`, without modify the core logic of the `Calculator` class.
 * **Testability**: Testing is simplified as different strategies can be mocked or injected during unit testing, allowing for more flexible and comprehensive testing setups.
   
  
