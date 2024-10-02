@@ -1,7 +1,7 @@
 # My Calculator
  
  
-## Assumptions:
+## Business Request 
  
 1. The `Calculator` supports fundamental operations (addition, subtraction, multiplication, and division).
 2. Operations can be performed in sequence.
