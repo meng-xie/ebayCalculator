@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 @Component
-public class Calculator {
+public class CalculatorService {
     private Number currentValue;
 
     private final Map<Operation, OperationInterface> operationMaps;
 
     @Autowired
-    public Calculator(Number initialValue, Map<Operation, OperationInterface> operationMaps) {
+    public CalculatorService(Number initialValue, Map<Operation, OperationInterface> operationMaps) {
         this.currentValue = initialValue;
         this.operationMaps = operationMaps;
     }
@@ -29,7 +29,7 @@ public class Calculator {
     }
 
     // Chaining operations
-    public Calculator chain(Operation operation, Number value) {
+    public CalculatorService chain(Operation operation, Number value) {
         this.currentValue = calculate(operation, this.currentValue, value);
         return this;
     }

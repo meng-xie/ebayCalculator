@@ -31,25 +31,25 @@ public class CalculatorTest {
     @Mock
     private PowOperation powOperation;
 
-    private Map<Operation, OperationInterface> operationStrategies;
+    private Map<Operation, OperationInterface> operationMaps;
 
     @InjectMocks
-    private Calculator calculator;
+    private CalculatorService calculatorService;
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
 
         // Initialize operation strategies map
-        operationStrategies = new HashMap<>();
-        operationStrategies.put(Operation.ADD, addOperation);
-        operationStrategies.put(Operation.SUBTRACT, subtractOperation);
-        operationStrategies.put(Operation.MULTIPLY, multiplyOperation);
-        operationStrategies.put(Operation.DIVIDE, divideOperation);
-        operationStrategies.put(Operation.POW, powOperation);
+        operationMaps = new HashMap<>();
+        operationMaps.put(Operation.ADD, addOperation);
+        operationMaps.put(Operation.SUBTRACT, subtractOperation);
+        operationMaps.put(Operation.MULTIPLY, multiplyOperation);
+        operationMaps.put(Operation.DIVIDE, divideOperation);
+        operationMaps.put(Operation.POW, powOperation);
 
-        // Initialize calculator with an initial value and the mocked operation strategies
-        calculator = new Calculator(24, operationStrategies);
+        // Initialize calculatorService with an initial value and the mocked operation strategies
+        calculatorService = new CalculatorService(24, operationMaps);
     }
 
 
@@ -60,8 +60,8 @@ public class CalculatorTest {
         when(addOperation.operation(24, 3)).thenReturn(27);
 
         // Act
-        calculator.chain(Operation.ADD, 3);
-        Number result = calculator.getResult();
+        calculatorService.chain(Operation.ADD, 3);
+        Number result = calculatorService.getResult();
 
         // Assert
         assertEquals(27, result.doubleValue(), "Addition operation failed");
@@ -73,8 +73,8 @@ public class CalculatorTest {
         when(subtractOperation.operation(24, 2)).thenReturn(22);
 
         // Act
-        calculator.chain(Operation.SUBTRACT, 2);
-        Number result = calculator.getResult();
+        calculatorService.chain(Operation.SUBTRACT, 2);
+        Number result = calculatorService.getResult();
 
         // Assert
         assertEquals(22, result.doubleValue(), "Subtraction operation failed");
@@ -86,8 +86,8 @@ public class CalculatorTest {
         when(multiplyOperation.operation(24, 3)).thenReturn(72);
 
         // Act
-        calculator.chain(Operation.MULTIPLY, 3);
-        Number result = calculator.getResult();
+        calculatorService.chain(Operation.MULTIPLY, 3);
+        Number result = calculatorService.getResult();
 
         // Assert
         assertEquals(72, result.doubleValue(), "Addition operation failed");
@@ -99,8 +99,8 @@ public class CalculatorTest {
         when(divideOperation.operation(24, 3)).thenReturn(8);
 
         // Act
-        calculator.chain(Operation.DIVIDE, 3);
-        Number result = calculator.getResult();
+        calculatorService.chain(Operation.DIVIDE, 3);
+        Number result = calculatorService.getResult();
 
         // Assert
         assertEquals(8, result.doubleValue(), "Addition operation failed");
@@ -112,8 +112,8 @@ public class CalculatorTest {
         when(powOperation.operation(24, 1)).thenReturn(24);
 
         // Act
-        calculator.chain(Operation.POW, 1);
-        Number result = calculator.getResult();
+        calculatorService.chain(Operation.POW, 1);
+        Number result = calculatorService.getResult();
 
         // Assert
         assertEquals(24, result.doubleValue(), "Pow operation failed");
@@ -126,9 +126,9 @@ public class CalculatorTest {
         when(subtractOperation.operation(27, 4)).thenReturn(23);
 
         // Act
-        calculator.chain(Operation.ADD, 3)
+        calculatorService.chain(Operation.ADD, 3)
                 .chain(Operation.SUBTRACT, 4);
-        Number result = calculator.getResult();
+        Number result = calculatorService.getResult();
 
         // Assert
         assertEquals(23, result.doubleValue(), "Chaining operations failed");
