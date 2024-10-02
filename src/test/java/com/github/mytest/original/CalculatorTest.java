@@ -1,4 +1,4 @@
-package com.github.mytest.v1;
+package com.github.mytest.original;
 
 import static org.junit.jupiter.api.Assertions.*;
 

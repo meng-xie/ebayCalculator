@@ -1,38 +1,39 @@
-# Flexible Calculator
-
-<img width="912" alt="image" src="https://github.com/user-attachments/assets/ce09216d-e35a-4628-8c97-0b565389b90b">
-
+# My Calculator
+ 
  
 ## Assumptions:
-1. The `Calculator` supports basic operations (ADD, SUBTRACT, MULTIPLY, DIVIDE).
-2. Operations can be chained sequentially.
-3. The solution adheres to the Open-Closed Principle, allowing for new operations to be added without modifying the `Calculator` class.
-4. Division by zero is handled gracefully by throwing an `ArithmeticException`.
+ 
+1. The `Calculator` supports fundamental operations (addition, subtraction, multiplication, and division).
+2. Operations can be performed in sequence.
+3. The design follows the Open-Closed Principle, enabling the addition of new operations without altering the `Calculator` class.
+4. Division by zero is managed gracefully by raising an `ArithmeticException`.
 
+ 
 ## Requisites
 - Java 17
-- Spring boot test 3
+- Spring boot test 3.x
+- Spring context 6.x
 - JUnit
 - Mockito
 
 
 ## How to Run
 1. Clone the repository.
-2. Run the tests using `mvn test` or your preferred testing framework.
-3. Use the `Calculator` class to perform basic or chained operations.
+2. install java and apache maven or use IDE to run
+3. Run the tests using `mvn test` or your preferred testing framework.
+4. Use the `Calculator` class to perform basic or chained operations.
 
-## IoC-Compatible
+## Version iteration
 
-`v2` is a IoC-compatible version of `v1`:
-
-* **Inversion of Control**: The `Calculator` class no longer directly controls which operation to use. Instead, it relies on the IoC container (Spring) to inject the correct `OperationStrategy` implementations at runtime.
-* **Loose Coupling**: The calculator can work with any new operations simply by injecting them through the `Map<Operation, OperationStrategy>` without changing the core logic of the `Calculator` class.
-* **Testability**: It’s easier to test because you can mock or inject different strategies during unit testing, enabling more flexible testing setups.
-
-
-
+folder `better` is a better version of folder `original` :
+ 
+* **Inversion of Control**: The `Calculator` class no longer dictates which operation to use. Instead, it leverages an IoC container (like Spring) to inject the appropriate `OperationStrategy` implementations at runtime.
+* **Loose Coupling**: The calculator can seamlessly integrate new operations by injecting them through a `Map<Operation, OperationStrategy>`, without modify the core logic of the `Calculator` class.
+* **Testability**: Testing is simplified as different strategies can be mocked or injected during unit testing, allowing for more flexible and comprehensive testing setups.
+  
+ 
 ## Future Improvements
-- Support for more Operators and Numeric Types.
-- Add Monitor log print
-- Edge case bug fixes
-- Resiliency (Rate Limiting, Retries, Multithreading)
+- **Expanded Operator and Numeric Type Support**: Introduce additional operators and support for various numeric types, enhancing the calculator's versatility and functionality.
+- **Monitoring and Logging**: Implement comprehensive monitoring and logging capabilities to print detailed logs, facilitating easier debugging and performance tracking.
+- **Edge Case Bug Fixes**: Address and resolve bugs related to edge cases, ensuring the calculator operates reliably under all conditions.
+- **Resiliency Enhancements**: Improve the system's resiliency by incorporating rate limiting, implementing retry mechanisms, and enabling multithreading to handle concurrent operations more efficiently.

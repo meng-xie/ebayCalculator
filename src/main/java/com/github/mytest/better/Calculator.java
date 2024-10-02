@@ -1,7 +1,7 @@
-package com.github.mytest.v2;
+package com.github.mytest.better;
 
-import com.github.mytest.v1.Operation;
-import com.github.mytest.v2.operations.OperationStrategy;
+import com.github.mytest.original.Operation;
+import com.github.mytest.better.operations.OperationStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

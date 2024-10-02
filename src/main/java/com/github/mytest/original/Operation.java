@@ -1,4 +1,4 @@
-package com.github.mytest.v1;
+package com.github.mytest.original;
 
 public enum Operation {
     ADD, SUBTRACT, MULTIPLY, DIVIDE, POW;
